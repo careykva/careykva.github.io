@@ -1,30 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title> Easy Quizzy	
-	</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="style.css" rel="stylesheet">
+  <script defer src="index.js"></script>
+  <title>Easy Quizzy</title>
 </head>
 <body>
-	<br />
-	<h1 align="center">
-		<font face="lato" siz= "8" LOGO>
-			<a href="#">Easy Quizzy</a>
-		</font>
-	</h1>
-	<h3 align='center'>
-		<font face="lato" size="4"LOGO/font>
-		<font face="cinzel">
-			<a href="#">Take Quiz</a>
-			<a href="#">Testimonial</a>
-			<a href="#">Gallery</a>
-			<a href="about_us.html"onmousedown = "Click.play()">About Us</a>
-			<a href="contact_us.html"onmousedown = "Click.play()">Contact Us</a>
+     <div class="header">
+       <div class="inner_header">
+      <ul>
+        <button id="start-btn" class="start-btn btn">Start</button>
+        <li><a href="#">Testimonial</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about_us.html">About us </a></li>
+        <li><a href="contact_us.html">Contact us</a></li>
+      
+       
+      </ul>
+        
 
-		</font>
-	</h3>
+       </div>
+       </div>
+
+       
+         <a href="index.html" class="home">Easy Quizzy</a>
+
+      
+  <div class="container">
+    <div id="question-container" class="hide">
+      
+      <div id="question">Question</div>
+      <div id="answer-buttons" class="btn-grid">
+        <button class="btn">Answer 1</button>
+        <button class="btn">Answer 2</button>
+        <button class="btn">Answer 3</button>
+        <button class="btn">Answer 4</button>
+      </div>
+      <div id="score" class="score">
+        <p>
+          score
+        </p>
+        <h1 class="point" id="point">
+          0
+        </h1>
+      </div>
+      <button id="back" class="back" >Back</button>
+
+      
+  
+    </div>
+    <div class="controls">
+      
+     
+      <button id="next-btn" class="next-btn btn hide">Next</button>
+      
+
+    </div>
+    <header>
+      <div class="title"> Quiz</div>
+      <div class="timer">
+          <div class="time_left_txt">Time Left</div>
+          <div class="timer_sec">180</div>
+      </div>
+      <div class="time_line"></div>
+  </header>
+    
+    </div>
+  </div>
+  </div>
+
+  <div class="results_box">
+    
+    <div class="complete_text">You've completed the Quiz!</div>
+    <div class="score_text">
+       
+    </div>
+    <div class="buttons">
+        <button class="restart">Replay Quiz</button>
+        <button class="quit">Quit Quiz</button>
+    </div>
+</div>
+  
+  <a  href="privacy_policy.html">
+    <button class="privacy" id="p">
+    Privacy
+    </button>
+  </a>
+  
+
 </body>
 </html>
 
 
-	
