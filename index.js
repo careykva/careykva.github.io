@@ -10,9 +10,14 @@ const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
 const container = document.querySelector(".container")
 const results_box = document.querySelector(".results_box")
+const quit_btn = document.querySelector(".quit");
+const reset_btn = document.querySelector(".restart")
+const question_counter = document.querySelector(".progress_counter")
+
 let shuffledQuestions, currentQuestionIndex
 const POINT = 1
 let point =0
+let question = 0 
 
 
 let counter_text
@@ -23,16 +28,15 @@ nextButton.addEventListener('click', () => {
   startTimer(180)
   startTimerLine(0)
 
-  
+  quit_btn.addEventListener("click",()=>{
+    window.location.reload()
+  })
 })
-back.addEventListener("onclick", () =>{
-  currentQuestionIndex++
-  setNextQuestion()
-})
+
 
 function startGame() {
  point=0
- 
+ question = 0
   startButton.classList.add('hide')
   shuffledQuestions = questions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
@@ -42,6 +46,7 @@ function startGame() {
 
 
 function setNextQuestion() {
+  
   resetState()
   showQuestion(shuffledQuestions[currentQuestionIndex])
 }
@@ -58,6 +63,7 @@ function showQuestion(question) {
     }
     button.addEventListener('click', selectAnswer)
     answerButtonsElement.appendChild(button)
+    incrementqustion(question)
   })
 }
 
@@ -106,6 +112,11 @@ function setStatusClass(element, correct) {
 incrementScore =num => {
   point +=num
   points.innerText= point
+
+}
+incrementqustion =num => {
+  question +=num
+  question_counter.innerText= currentQuestionIndex 
 
 }
   
@@ -244,3 +255,36 @@ const questions = [
 ]
 
 
+
+
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
