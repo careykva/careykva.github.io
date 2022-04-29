@@ -202,6 +202,7 @@ font-style: italic;
   position:absolute;
   padding:5px;
   font-size:35px;
+  margin:5px;
   
 }
   
@@ -215,9 +216,9 @@ font-style: italic;
 
 }
 p{
-  color:brown;
+  color:rgb(241, 236, 236);
   padding:10px;
-  font-weight:1.5rem;
+  font-weight:2.5rem;
   font-size: 15px;
 }
 h1{
@@ -259,8 +260,14 @@ li{
 /* Hide the images by default */
 .mySlides {
   display: none;
+ 
 }
+.package{
+  position: absolute;
+  top: 30%;
 
+
+}
 /* Add a pointer when hovering over the thumbnail images */
 .cursor {
   cursor: pointer;
@@ -345,7 +352,7 @@ li{
 
 .testimonial {
   border: 2px solid #ccc;
-  background-color: #eee;
+  background-color: rgba(122, 13, 13, 0.486);
   border-radius: 5px;
   padding: 16px;
   margin: 16px 0;
